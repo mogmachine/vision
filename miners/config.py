@@ -23,6 +23,12 @@ def check_config(cls, config: "bt.Config"):
 def get_config() -> "bt.Config":
     parser = argparse.ArgumentParser()
     parser.add_argument("--axon.port", type=int, default=8091, help="Port to run the axon on.")
+    parser.add_argument(
+        "--axon.ip",
+        type=str,
+        default="localhost",
+        help="IP address to bind the axon to. Defaults to localhost",
+    )
 
     parser.add_argument(
         "--subtensor.network",

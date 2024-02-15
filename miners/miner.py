@@ -73,7 +73,7 @@ class MinerBoi:
 
         self.clip_model, self.clip_preprocess = clip.load("ViT-B/32", device=self.device)
 
-        self.axon = axon or bt.axon(wallet=self.wallet, port=self.config.axon.port)
+        self.axon = axon or bt.axon(wallet=self.wallet, port=self.config.axon.port, external_ip=self.config.axon.ip)
 
         bt.logging.info(f"Attaching Embeddings and Segmenting functions to axon.")
 
